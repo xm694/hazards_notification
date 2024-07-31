@@ -8,15 +8,6 @@ def create_tables():
     sqlengine = engine()
     metadata = MetaData()
 
-    # incident_staging = Table('incident_staging', metadata,
-    #                  Column('hazard_id', Integer, primary_key=True, unique=True),
-    #                  Column('category', String(80)),
-    #                  Column('latitude', Float),
-    #                  Column('longitude', Float),
-    #                  Column('planed_end_time', )
-    #                  Column('notification', VARCHAR(5000))
-    #                  )
-
     incident = Table('incident', metadata,
                      Column('hazard_id', Integer, primary_key=True, unique=True),
                      Column('category', String(80)),
@@ -25,14 +16,7 @@ def create_tables():
                      Column('planed_end_time',DateTime),
                      Column('notification', VARCHAR(5000))
                      )
-    # majorevent_staging = Table('majorevent_staging', metadata,
-    #                  Column('hazard_id', Integer, primary_key=True, unique=True),
-    #                  Column('category', String(80)),
-    #                  Column('latitude', Float),
-    #                  Column('longitude', Float),
-    #                  Column('notification', VARCHAR(5000))
-    #                  )
-    
+
     majorevent = Table('majorevent', metadata,
                      Column('hazard_id', Integer, primary_key=True, unique=True),
                      Column('category', String(80)),
@@ -41,15 +25,6 @@ def create_tables():
                      Column('planed_end_time',DateTime),
                      Column('notification', VARCHAR(5000))
                      )
-    
-    # roadworks_staging = Table('roadworks_staging', metadata,
-    #                  Column('hazard_id', Integer, primary_key=True, unique=True),
-    #                  Column('category', String(80)),
-    #                  Column('latitude', Float),
-    #                  Column('longitude', Float),
-    #                  Column('notification', VARCHAR(5000))
-    #                  )
-
 
     roadworks = Table('roadworks', metadata,
                      Column('hazard_id', Integer, primary_key=True, unique=True),
@@ -59,14 +34,7 @@ def create_tables():
                      Column('planed_end_time',DateTime),
                      Column('notification', VARCHAR(5000))
                      )
-    
-    # roads_staging = Table('roads_staging', metadata,
-    #                Column('hazard_id', Integer, primary_key=True, unique=True),
-    #                Column('region', VARCHAR(1000)),
-    #                Column('suburb', VARCHAR(1000)),
-    #                Column('mainStreet', VARCHAR(1000)),
-    #                Column('crossStreet', VARCHAR(1000))
-    #                )
+
 
     roads =  Table('roads', metadata,
                    Column('hazard_id', Integer, primary_key=True, unique=True),

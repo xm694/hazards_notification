@@ -212,23 +212,7 @@ def handler(event, context):
             update_roads(sqlengine=sqlengine, table_name='roads', df=df_road)
             print(IDs_to_notify)
     
-    # with sqlengine.connect() as conn:
-    #     # Truncate staging table first
-    #     # and insert data into staging data first 
-    #     # and merge the result into main table
-    #     print("truncating staging table !")
-    #     conn.execute(text(f"TRUNCATE TABLE {staging_table_name}" ))
-    #     print("staging table truncated!")
-    #     df_general.to_sql(name=staging_table_name, con=conn, if_exists='append', index=False, dtype={'hazard_id': Integer()})
-    #     print(f"insert successful in table {staging_table_name}")
-
-    #     conn.execute(create_merge_stmt(table_name, staging_table_name))
-    #     print(f"Merge successful on table {table_name}")
-
-    #     # now truncate staging table again
-    #     conn.execute(text(f"TRUNCATE TABLE {staging_table_name}" ))
-
-    #todos: send notification through sns
+    #send notification through sns
     TopicArn = os.environ.get("TopicArn", "")
     if len(IDs_to_notify) > 0:
         try: 
