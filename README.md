@@ -3,6 +3,8 @@
 ## Project Overview
 This project implements an automated pipeline for road hazards processing and notification by utilising various AWS Cloud Services. It ingests live traffic data from NSW traffic data hub, processes it, stores it and provide notifications for new hazards.
 
+**Update Terraform Automation**
+
 ## System Architecture
 ![Arichitecture Image](./assets/architecture.png)
 

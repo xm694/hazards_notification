@@ -1,6 +1,9 @@
 .env
 dataprocess/
-src/
 depipeline/
+src/
 depipeline.ipynb
-
+terraform-pipe/.terraform
+.terraform.lock.hcl
+terraform.tfstate.backup
+*.zip
